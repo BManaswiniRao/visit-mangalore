@@ -266,6 +266,24 @@
     .beach-img.b3 { background: linear-gradient(135deg, #063042, #0a7b8a); }
     .beach-img.b4 { background: linear-gradient(135deg, #0e4d63, #0fa8bc); }
 
+    .beach-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .temple-img {
+      height: 160px;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+    .temple-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .food-img {
+      height: 140px;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .food-img img { width: 100%; height: 100%; object-fit: cover; }
+
     .beach-body { padding: 1.25rem; }
     .beach-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; margin-bottom: 6px; }
     .beach-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 12px; }
@@ -431,7 +449,7 @@
         </div>
       </div>
       <div class="beach-card">
-        <div class="beach-img b2">&#9875;</div>
+        <div class="beach-img b2"><img src="images/tannirbhavi.jpg" alt="Tannirbhavi Beach"></div>
         <div class="beach-body">
           <div class="beach-name">Tannirbhavi Beach</div>
           <p class="beach-desc">A serene, less crowded beach accessible by boat. The ferry ride itself is an experience worth having.</p>
@@ -478,6 +496,7 @@
       </div>
       <div class="temples-grid">
         <div class="temple-card">
+          <div class="temple-img"><img src="images/kudroli.jpg" alt="Kudroli Gokarnath Temple"></div>
           <div class="temple-icon">&#127983;</div>
           <div class="temple-name">Kudroli Gokarnath Temple</div>
           <p class="temple-desc">A stunning temple famous for its Navratri celebrations and intricate Dravidian architecture.</p>
@@ -531,7 +550,7 @@
         <span class="food-must">&#11088; Must Try</span>
       </div>
       <div class="food-card">
-        <div class="food-emoji">&#127848;</div>
+        <div class="food-img"><img src="images/gadbad.jpg" alt="Gadbad Ice Cream"></div>
         <div class="food-name">Gadbad Ice Cream</div>
         <p class="food-desc">A Mangalore original — layers of fruit, jelly, ice cream and nuts in a tall glass. Invented right here!</p>
         <span class="food-must">&#11088; Mangalore Original</span>
