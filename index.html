@@ -259,7 +259,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 52px;
       overflow: hidden;
     }
 
@@ -303,10 +302,8 @@
     }
     .food-img img { width: 100%; height: 100%; object-fit: cover; }
 
-    .food-emoji { font-size: 42px; margin-bottom: 10px; }
     .food-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; margin-bottom: 6px; }
     .food-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
-    .food-must { display: inline-block; font-size: 10px; background: #fff4e6; color: var(--gold); border: 1px solid #f5d9a8; border-radius: 20px; padding: 2px 9px; margin-top: 8px; }
 
     /* Food Spots */
     .sub-header {
@@ -331,13 +328,19 @@
       background: var(--sand);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 1.25rem;
+      overflow: hidden;
       transition: border-color 0.15s, transform 0.15s;
     }
 
     .spot-card:hover { border-color: var(--ocean-mid); transform: translateY(-2px); }
 
-    .spot-icon { font-size: 32px; margin-bottom: 10px; }
+    .spot-img {
+      height: 130px;
+      overflow: hidden;
+    }
+    .spot-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .spot-body { padding: 1.25rem; }
     .spot-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; margin-bottom: 4px; }
     .spot-famous { font-size: 11px; color: var(--ocean); background: var(--teal-light); padding: 2px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
     .spot-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
@@ -354,7 +357,7 @@
     .culture-card {
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 1.5rem;
+      overflow: hidden;
       background: var(--sand);
       transition: border-color 0.15s, transform 0.15s;
     }
@@ -364,20 +367,10 @@
     .culture-img {
       height: 160px;
       overflow: hidden;
-      border-radius: 10px;
-      margin-bottom: 12px;
     }
     .culture-img img { width: 100%; height: 100%; object-fit: cover; }
 
-    .culture-icon { font-size: 42px; margin-bottom: 12px; }
-
-    .spot-img {
-      height: 130px;
-      overflow: hidden;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-    .spot-img img { width: 100%; height: 100%; object-fit: cover; }
+    .culture-body { padding: 1.25rem; }
     .culture-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; margin-bottom: 6px; }
     .culture-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
     .culture-tag { font-size: 11px; color: var(--gold); background: #fff4e6; border: 1px solid #f5d9a8; border-radius: 20px; padding: 2px 9px; margin-top: 10px; display: inline-block; }
@@ -409,7 +402,6 @@
       padding: 1.25rem;
     }
 
-    .tip-icon { font-size: 28px; margin-bottom: 10px; }
     .tip-title { font-size: 14px; font-weight: 500; margin-bottom: 6px; }
     .tip-text { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; }
 
@@ -422,7 +414,6 @@
 
     .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 6px; }
     .footer-logo span { color: #7de8f5; }
-    .heart { color: #e05a5a; }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
@@ -451,7 +442,7 @@
   </nav>
 
   <div class="hero">
-    <div class="hero-tag">&#127754; Karnataka's Coastal Gem</div>
+    <div class="hero-tag">Karnataka's Coastal Gem</div>
     <h1>Welcome to<br/><em>Mangalore</em></h1>
     <p class="hero-sub">Where the Arabian Sea meets the Western Ghats — a city of golden beaches, ancient temples, and legendary food.</p>
     <div class="hero-btns">
@@ -471,7 +462,7 @@
         <div class="stat-label">Years of History</div>
       </div>
       <div class="stat">
-        <div class="stat-num">&#8734;</div>
+        <div class="stat-num">&infin;</div>
         <div class="stat-label">Delicious Dishes</div>
       </div>
     </div>
@@ -480,7 +471,7 @@
   <!-- PLACES TO VISIT -->
   <section id="places">
     <div class="section-header">
-      <div class="section-tag">&#128205; Places to Visit</div>
+      <div class="section-tag">Places to Visit</div>
       <h2>Beaches, Temples &amp; Beyond</h2>
       <p>From golden shores to ancient shrines — Mangalore's must-visit spots.</p>
     </div>
@@ -489,7 +480,7 @@
       <div class="place-card">
         <div class="place-img p1"><img src="images/panambur%20beach.jpeg" alt="Panambur Beach"></div>
         <div class="place-body">
-          <span class="place-type">&#127754; Beach</span>
+          <span class="place-type">Beach</span>
           <div class="place-name">Panambur Beach</div>
           <p class="place-desc">Mangalore's most popular beach, famous for its golden sands, water sports, and stunning sunsets. Perfect for families.</p>
           <div class="place-tags">
@@ -503,7 +494,7 @@
       <div class="place-card">
         <div class="place-img p2"><img src="images/tannirbavi.jpeg" alt="Tannirbhavi Beach"></div>
         <div class="place-body">
-          <span class="place-type">&#127754; Beach</span>
+          <span class="place-type">Beach</span>
           <div class="place-name">Tannirbhavi Beach</div>
           <p class="place-desc">A serene, less crowded beach accessible by boat. The ferry ride itself is an experience worth having.</p>
           <div class="place-tags">
@@ -517,7 +508,7 @@
       <div class="place-card">
         <div class="place-img p3"><img src="images/kadri%20temple.jpeg" alt="Kadri Manjunath Temple"></div>
         <div class="place-body">
-          <span class="place-type">&#127983; Temple</span>
+          <span class="place-type">Temple</span>
           <div class="place-name">Kadri Manjunath Temple</div>
           <p class="place-desc">A 1000-year-old temple with beautiful bronze statues and a peaceful tank surrounded by lush hills.</p>
           <div class="place-tags">
@@ -531,7 +522,7 @@
       <div class="place-card">
         <div class="place-img p4"><img src="images/kudroli.jpeg" alt="Kudroli Temple"></div>
         <div class="place-body">
-          <span class="place-type">&#127983; Temple</span>
+          <span class="place-type">Temple</span>
           <div class="place-name">Kudroli Gokarnath Temple</div>
           <p class="place-desc">A stunning temple famous for its Navratri celebrations and intricate Dravidian architecture lit up beautifully at night.</p>
           <div class="place-tags">
@@ -545,7 +536,7 @@
       <div class="place-card">
         <div class="place-img p5"><img src="images/polali%20temple.jpeg" alt="Polali Temple"></div>
         <div class="place-body">
-          <span class="place-type">&#127983; Temple</span>
+          <span class="place-type">Temple</span>
           <div class="place-name">Polali Rajarajeshwari Temple</div>
           <p class="place-desc">A revered temple dedicated to Goddess Rajarajeshwari, set amidst lush greenery on the banks of the Phalguni river.</p>
           <div class="place-tags">
@@ -563,34 +554,42 @@
   <div style="background: var(--white);">
     <section id="food">
       <div class="section-header">
-        <div class="section-tag">&#127860; Food &amp; Flavours</div>
+        <div class="section-tag">Food &amp; Flavours</div>
         <h2>Where to Eat in Mangalore</h2>
         <p>These iconic spots have been feeding Mangaloreans for decades.</p>
       </div>
       <div class="spots-grid">
         <div class="spot-card">
           <div class="spot-img"><img src="images/pabbas.jpeg" alt="Pabbas"></div>
-          <div class="spot-name">Pabbas</div>
-          <span class="spot-famous">Famous for Gadbad Ice Cream</span>
-          <p class="spot-desc">Mangalore's most iconic ice cream parlour. Pabbas invented the Gadbad and has been serving it since 1978. An absolute must-visit.</p>
+          <div class="spot-body">
+            <div class="spot-name">Pabbas</div>
+            <span class="spot-famous">Famous for Gadbad Ice Cream</span>
+            <p class="spot-desc">Mangalore's most iconic ice cream parlour. Pabbas invented the Gadbad and has been serving it since 1978. An absolute must-visit.</p>
+          </div>
         </div>
         <div class="spot-card">
           <div class="spot-img"><img src="images/naturals.jpeg" alt="Naturals Ice Cream"></div>
-          <div class="spot-name">Naturals Ice Cream</div>
-          <span class="spot-famous">Famous for Natural Fruit Ice Creams</span>
-          <p class="spot-desc">Premium ice creams made from real fruits — tender coconut, sitaphal, mango and more. Pure, natural goodness in every scoop.</p>
+          <div class="spot-body">
+            <div class="spot-name">Naturals Ice Cream</div>
+            <span class="spot-famous">Famous for Natural Fruit Ice Creams</span>
+            <p class="spot-desc">Premium ice creams made from real fruits — tender coconut, sitaphal, mango and more. Pure, natural goodness in every scoop.</p>
+          </div>
         </div>
         <div class="spot-card">
           <div class="spot-img"><img src="images/car%20street.jpeg" alt="Car Street"></div>
-          <div class="spot-name">Car Street</div>
-          <span class="spot-famous">Famous for Charmuri &amp; Street Food</span>
-          <p class="spot-desc">The heart of Mangalore's street food scene. Try the famous spicy charmuri (puffed rice) and soak in the vibrant old-city atmosphere.</p>
+          <div class="spot-body">
+            <div class="spot-name">Car Street</div>
+            <span class="spot-famous">Famous for Charmuri &amp; Street Food</span>
+            <p class="spot-desc">The heart of Mangalore's street food scene. Try the famous spicy charmuri (puffed rice) and soak in the vibrant old-city atmosphere.</p>
+          </div>
         </div>
         <div class="spot-card">
           <div class="spot-img"><img src="images/machali.jpeg" alt="Machali"></div>
-          <div class="spot-name">Machali</div>
-          <span class="spot-famous">Famous for Kori Roti &amp; Seafood</span>
-          <p class="spot-desc">A beloved local restaurant known for authentic Mangalorean flavours — their Kori Roti and fresh fish preparations are legendary.</p>
+          <div class="spot-body">
+            <div class="spot-name">Machali</div>
+            <span class="spot-famous">Famous for Kori Roti &amp; Seafood</span>
+            <p class="spot-desc">A beloved local restaurant known for authentic Mangalorean flavours — their Kori Roti and fresh fish preparations are legendary.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -600,7 +599,7 @@
   <div class="culture-bg">
     <section id="culture">
       <div class="section-header">
-        <div class="section-tag">&#127989; Culture &amp; Traditions</div>
+        <div class="section-tag">Culture &amp; Traditions</div>
         <h2>Living Traditions of Tulu Nadu</h2>
         <p>Mangalore is the heart of Tulu Nadu — home to some of India's most unique and vibrant cultural traditions.</p>
       </div>
@@ -608,44 +607,56 @@
 
         <div class="culture-card">
           <div class="culture-img"><img src="images/yakshagana.jpeg" alt="Yakshagana"></div>
-          <div class="culture-name">Yakshagana</div>
-          <p class="culture-desc">A breathtaking traditional theatre form combining dance, music, elaborate costumes and mythology. Performances run through the night and are a mesmerizing experience unique to coastal Karnataka.</p>
-          <span class="culture-tag">&#127914; Traditional Theatre</span>
+          <div class="culture-body">
+            <div class="culture-name">Yakshagana</div>
+            <p class="culture-desc">A breathtaking traditional theatre form combining dance, music, elaborate costumes and mythology. Performances run through the night and are a mesmerizing experience unique to coastal Karnataka.</p>
+            <span class="culture-tag">Traditional Theatre</span>
+          </div>
         </div>
 
         <div class="culture-card">
           <div class="culture-img"><img src="images/bootha%20kola.jpeg" alt="Bootha Kola"></div>
-          <div class="culture-name">Bootha Kola</div>
-          <p class="culture-desc">A powerful spirit worship ritual unique to Tulu Nadu. Elaborate costumes, fire, and rhythmic drumming create a deeply spiritual and unforgettable spectacle that connects people to their ancestors.</p>
-          <span class="culture-tag">&#10024; Spirit Ritual</span>
+          <div class="culture-body">
+            <div class="culture-name">Bootha Kola</div>
+            <p class="culture-desc">A powerful spirit worship ritual unique to Tulu Nadu. Elaborate costumes, fire, and rhythmic drumming create a deeply spiritual and unforgettable spectacle.</p>
+            <span class="culture-tag">Spirit Ritual</span>
+          </div>
         </div>
 
         <div class="culture-card">
           <div class="culture-img"><img src="images/pilivesha.jpeg" alt="Pilivesha Tiger Dance"></div>
-          <div class="culture-name">Pilivesha — Tiger Dance</div>
-          <p class="culture-desc">Men paint their bodies to resemble tigers and perform energetic dances during Navratri and Dasara. A thrilling, colourful street performance that draws huge crowds.</p>
-          <span class="culture-tag">&#127775; Festival Dance</span>
+          <div class="culture-body">
+            <div class="culture-name">Pilivesha — Tiger Dance</div>
+            <p class="culture-desc">Men paint their bodies to resemble tigers and perform energetic dances during Navratri and Dasara. A thrilling, colourful street performance that draws huge crowds.</p>
+            <span class="culture-tag">Festival Dance</span>
+          </div>
         </div>
 
         <div class="culture-card">
           <div class="culture-img"><img src="images/kambala.jpeg" alt="Kambala"></div>
-          <div class="culture-name">Kambala</div>
-          <p class="culture-desc">A traditional buffalo racing festival held in muddy paddy fields — one of Karnataka's oldest and most exciting rural sports, celebrated with great community pride and spirit.</p>
-          <span class="culture-tag">&#127941; Traditional Sport</span>
+          <div class="culture-body">
+            <div class="culture-name">Kambala</div>
+            <p class="culture-desc">A traditional buffalo racing festival held in muddy paddy fields — one of Karnataka's oldest and most exciting rural sports, celebrated with great community pride.</p>
+            <span class="culture-tag">Traditional Sport</span>
+          </div>
         </div>
 
         <div class="culture-card">
           <div class="culture-img"><img src="images/tulu%20folk%20music.jpeg" alt="Tulu Folk Music"></div>
-          <div class="culture-name">Tulu Folk Music</div>
-          <p class="culture-desc">The soulful folk songs of Tulu Nadu — Paddanas and Janapada Sangeetha — tell ancient stories of gods, heroes and the coastal land. A living oral tradition passed through generations.</p>
-          <span class="culture-tag">&#127925; Folk Heritage</span>
+          <div class="culture-body">
+            <div class="culture-name">Tulu Folk Music</div>
+            <p class="culture-desc">The soulful folk songs of Tulu Nadu — Paddanas and Janapada Sangeetha — tell ancient stories of gods, heroes and the coastal land. A living oral tradition passed through generations.</p>
+            <span class="culture-tag">Folk Heritage</span>
+          </div>
         </div>
 
         <div class="culture-card">
           <div class="culture-img"><img src="images/mangalore%20dasara.jpeg" alt="Mangalore Dasara"></div>
-          <div class="culture-name">Mangalore Dasara</div>
-          <p class="culture-desc">The city comes alive during Navratri with the spectacular Kudroli temple celebrations — grand processions, dazzling lights, Pilivesha dancers and thousands of devoted visitors.</p>
-          <span class="culture-tag">&#127983; Grand Festival</span>
+          <div class="culture-body">
+            <div class="culture-name">Mangalore Dasara</div>
+            <p class="culture-desc">The city comes alive during Navratri with the spectacular Kudroli temple celebrations — grand processions, dazzling lights, Pilivesha dancers and thousands of devoted visitors.</p>
+            <span class="culture-tag">Grand Festival</span>
+          </div>
         </div>
 
       </div>
@@ -655,28 +666,24 @@
   <!-- TIPS -->
   <div class="tips-section" id="tips">
     <div class="section-header">
-      <div class="section-tag">&#128161; Traveller Tips</div>
+      <div class="section-tag">Traveller Tips</div>
       <h2>Before You Visit</h2>
       <p>A local's guide to making the most of your trip to Mangalore.</p>
     </div>
     <div class="tips-grid">
       <div class="tip-card">
-        <div class="tip-icon">&#9728;&#65039;</div>
         <div class="tip-title">Best Time to Visit</div>
         <p class="tip-text">October to February is ideal — cool weather, calm seas, and clear skies. Avoid monsoon season for beaches.</p>
       </div>
       <div class="tip-card">
-        <div class="tip-icon">&#128652;</div>
         <div class="tip-title">Getting Around</div>
         <p class="tip-text">Auto-rickshaws are the easiest way to get around. Ola and Uber also work well within the city.</p>
       </div>
       <div class="tip-card">
-        <div class="tip-icon">&#127969;</div>
         <div class="tip-title">Where to Stay</div>
         <p class="tip-text">Stay near Hampankatta or Kadri for easy access to most temples, beaches, and food spots.</p>
       </div>
       <div class="tip-card">
-        <div class="tip-icon">&#128483;&#65039;</div>
         <div class="tip-title">Local Language</div>
         <p class="tip-text">Tulu and Kannada are spoken locally. Most people understand Hindi and English too — don't worry!</p>
       </div>
@@ -685,8 +692,8 @@
 
   <footer>
     <div class="footer-logo">Visit<span>Mangalore</span></div>
-    <p style="margin-top:8px;">Made with <span class="heart">&#10084;</span> by a proud Mangalorean &mdash; built using HTML &amp; CSS</p>
-    <p style="margin-top:6px; font-size:12px;">&#127754; The Queen of the Arabian Sea</p>
+    <p style="margin-top:8px;">Made with love by a proud Mangalorean &mdash; built using HTML &amp; CSS</p>
+    <p style="margin-top:6px; font-size:12px;">The Queen of the Arabian Sea</p>
   </footer>
 
 </body>
