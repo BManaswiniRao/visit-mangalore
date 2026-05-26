@@ -361,7 +361,23 @@
 
     .culture-card:hover { border-color: var(--ocean-mid); transform: translateY(-2px); }
 
+    .culture-img {
+      height: 160px;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+    .culture-img img { width: 100%; height: 100%; object-fit: cover; }
+
     .culture-icon { font-size: 42px; margin-bottom: 12px; }
+
+    .spot-img {
+      height: 130px;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .spot-img img { width: 100%; height: 100%; object-fit: cover; }
     .culture-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; margin-bottom: 6px; }
     .culture-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
     .culture-tag { font-size: 11px; color: var(--gold); background: #fff4e6; border: 1px solid #f5d9a8; border-radius: 20px; padding: 2px 9px; margin-top: 10px; display: inline-block; }
@@ -499,7 +515,7 @@
       </div>
 
       <div class="place-card">
-        <div class="place-img p3">&#127981;</div>
+        <div class="place-img p3"><img src="images/kadri%20temple.jpeg" alt="Kadri Manjunath Temple"></div>
         <div class="place-body">
           <span class="place-type">&#127983; Temple</span>
           <div class="place-name">Kadri Manjunath Temple</div>
@@ -527,7 +543,7 @@
       </div>
 
       <div class="place-card">
-        <div class="place-img p5">&#127959;</div>
+        <div class="place-img p5"><img src="images/polali%20temple.jpeg" alt="Polali Temple"></div>
         <div class="place-body">
           <span class="place-type">&#127983; Temple</span>
           <div class="place-name">Polali Rajarajeshwari Temple</div>
@@ -553,13 +569,13 @@
       </div>
       <div class="spots-grid">
         <div class="spot-card">
-          <div class="spot-icon">&#127848;</div>
+          <div class="spot-img"><img src="images/pabbas.jpeg" alt="Pabbas"></div>
           <div class="spot-name">Pabbas</div>
           <span class="spot-famous">Famous for Gadbad Ice Cream</span>
           <p class="spot-desc">Mangalore's most iconic ice cream parlour. Pabbas invented the Gadbad and has been serving it since 1978. An absolute must-visit.</p>
         </div>
         <div class="spot-card">
-          <div class="spot-icon">&#127846;</div>
+          <div class="spot-img"><img src="images/naturals.jpeg" alt="Naturals Ice Cream"></div>
           <div class="spot-name">Naturals Ice Cream</div>
           <span class="spot-famous">Famous for Natural Fruit Ice Creams</span>
           <p class="spot-desc">Premium ice creams made from real fruits — tender coconut, sitaphal, mango and more. Pure, natural goodness in every scoop.</p>
@@ -591,14 +607,14 @@
       <div class="culture-grid">
 
         <div class="culture-card">
-          <div class="culture-icon">&#127918;</div>
+          <div class="culture-img"><img src="images/yakshagana.jpeg" alt="Yakshagana"></div>
           <div class="culture-name">Yakshagana</div>
           <p class="culture-desc">A breathtaking traditional theatre form combining dance, music, elaborate costumes and mythology. Performances run through the night and are a mesmerizing experience unique to coastal Karnataka.</p>
           <span class="culture-tag">&#127914; Traditional Theatre</span>
         </div>
 
         <div class="culture-card">
-          <div class="culture-icon">&#128293;</div>
+          <div class="culture-img"><img src="images/bootha%20kola.jpeg" alt="Bootha Kola"></div>
           <div class="culture-name">Bootha Kola</div>
           <p class="culture-desc">A powerful spirit worship ritual unique to Tulu Nadu. Elaborate costumes, fire, and rhythmic drumming create a deeply spiritual and unforgettable spectacle that connects people to their ancestors.</p>
           <span class="culture-tag">&#10024; Spirit Ritual</span>
@@ -612,7 +628,7 @@
         </div>
 
         <div class="culture-card">
-          <div class="culture-icon">&#128004;</div>
+          <div class="culture-img"><img src="images/kambala.jpeg" alt="Kambala"></div>
           <div class="culture-name">Kambala</div>
           <p class="culture-desc">A traditional buffalo racing festival held in muddy paddy fields — one of Karnataka's oldest and most exciting rural sports, celebrated with great community pride and spirit.</p>
           <span class="culture-tag">&#127941; Traditional Sport</span>
@@ -626,7 +642,7 @@
         </div>
 
         <div class="culture-card">
-          <div class="culture-icon">&#127881;</div>
+          <div class="culture-img"><img src="images/mangalore%20dasara.jpeg" alt="Mangalore Dasara"></div>
           <div class="culture-name">Mangalore Dasara</div>
           <p class="culture-desc">The city comes alive during Navratri with the spectacular Kudroli temple celebrations — grand processions, dazzling lights, Pilivesha dancers and thousands of devoted visitors.</p>
           <span class="culture-tag">&#127983; Grand Festival</span>
