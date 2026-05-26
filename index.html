@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visit Mangalore — The Queen of the Arabian Sea</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ocean:     #0a7b8a;
+      --ocean-mid: #0e9aab;
+      --teal-light:#e0f5f7;
+      --sand:      #fdf6ee;
+      --sand-dark: #f5ead8;
+      --text:      #0f2027;
+      --muted:     #4a6270;
+      --hint:      #8aa5b0;
+      --white:     #ffffff;
+      --border:    #d0e8ec;
+      --gold:      #e0933a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--sand);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253, 246, 238, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 62px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ocean);
+    }
+
+    .logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--ocean); }
+
+    .hero {
+      background: linear-gradient(160deg, #0a3d52 0%, #0a7b8a 50%, #0e9aab 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 6rem 1.5rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 80px;
+      background: var(--sand);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 5px 14px;
+      margin-bottom: 1.25rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 7vw, 68px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: #7de8f5;
+    }
+
+    .hero-sub {
+      font-size: clamp(15px, 2vw, 18px);
+      font-weight: 300;
+      opacity: 0.85;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--ocean);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 11px 24px;
+      border-radius: 10px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 11px 24px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.5);
+      transition: background 0.15s;
+    }
+
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+    .stats-bar {
+      max-width: 800px;
+      margin: -10px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stat {
+      background: var(--white);
+      text-align: center;
+      padding: 1.25rem 1rem;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--ocean);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label { font-size: 12px; color: var(--hint); }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ocean);
+      background: var(--teal-light);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+
+    .section-header p {
+      font-size: 16px;
+      color: var(--muted);
+      margin-top: 10px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .beaches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .beach-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .beach-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(10,123,138,0.12); }
+
+    .beach-img {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+    }
+
+    .beach-img.b1 { background: linear-gradient(135deg, #0a3d52, #0e9aab); }
+    .beach-img.b2 { background: linear-gradient(135deg, #0a5268, #1db8cc); }
+    .beach-img.b3 { background: linear-gradient(135deg, #063042, #0a7b8a); }
+    .beach-img.b4 { background: linear-gradient(135deg, #0e4d63, #0fa8bc); }
+
+    .beach-body { padding: 1.25rem; }
+    .beach-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+    .beach-desc { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 12px; }
+    .beach-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .btag { font-size: 11px; background: var(--teal-light); color: var(--ocean); padding: 3px 10px; border-radius: 20px; }
+
+    .temples-bg { background: var(--white); }
+
+    .temples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .temple-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      background: var(--sand);
+      transition: border-color 0.15s, transform 0.15s;
+    }
+
+    .temple-card:hover { border-color: var(--ocean-mid); transform: translateY(-2px); }
+
+    .temple-icon { font-size: 36px; margin-bottom: 12px; }
+    .temple-name { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; margin-bottom: 6px; }
+    .temple-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .temple-dist { font-size: 11px; color: var(--hint); margin-top: 10px; }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .food-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem;
+      text-align: center;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .food-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(10,123,138,0.1); }
+
+    .food-emoji { font-size: 42px; margin-bottom: 10px; }
+    .food-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+    .food-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+    .food-must { display: inline-block; font-size: 10px; background: #fff4e6; color: var(--gold); border: 1px solid #f5d9a8; border-radius: 20px; padding: 2px 9px; margin-top: 8px; }
+
+    .tips-section {
+      background: linear-gradient(135deg, #0a3d52, #0a7b8a);
+      color: var(--white);
+      border-radius: 24px;
+      margin: 0 1.5rem 4rem;
+      padding: 3.5rem 2rem;
+    }
+
+    .tips-section .section-tag { background: rgba(255,255,255,0.15); color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+    .tips-section h2 { color: var(--white); }
+    .tips-section p { color: rgba(255,255,255,0.75); }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 2rem;
+    }
+
+    .tip-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 14px;
+      padding: 1.25rem;
+    }
+
+    .tip-icon { font-size: 28px; margin-bottom: 10px; }
+    .tip-title { font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+    .tip-text { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+    footer {
+      background: #0a2535;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--white); margin-bottom: 6px; }
+    .footer-logo span { color: #7de8f5; }
+    .heart { color: #e05a5a; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { gap: 14px; }
+      .stats-bar { grid-template-columns: 1fr; }
+      .tips-section { margin: 0 0 3rem; border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">Visit<span>Mangalore</span></div>
+      <ul class="nav-links">
+        <li><a href="#beaches">Beaches</a></li>
+        <li><a href="#temples">Temples</a></li>
+        <li><a href="#food">Food</a></li>
+        <li><a href="#tips">Tips</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-tag">&#127754; Karnataka's Coastal Gem</div>
+    <h1>Welcome to<br/><em>Mangalore</em></h1>
+    <p class="hero-sub">Where the Arabian Sea meets the Western Ghats — a city of golden beaches, ancient temples, and legendary food.</p>
+    <div class="hero-btns">
+      <a href="#beaches" class="btn-primary">Explore beaches &darr;</a>
+      <a href="#food" class="btn-outline">Discover food</a>
+    </div>
+  </div>
+
+  <div style="max-width:1100px; margin:0 auto; padding:0 1.5rem;">
+    <div class="stats-bar">
+      <div class="stat">
+        <div class="stat-num">6+</div>
+        <div class="stat-label">Beautiful Beaches</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">300+</div>
+        <div class="stat-label">Years of History</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">&#8734;</div>
+        <div class="stat-label">Delicious Dishes</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="beaches">
+    <div class="section-header">
+      <div class="section-tag">&#127754; Beaches &amp; Nature</div>
+      <h2>Sun, Sand &amp; the Arabian Sea</h2>
+      <p>Mangalore's coastline is one of Karnataka's best kept secrets — here are the must-visit beaches.</p>
+    </div>
+    <div class="beaches-grid">
+      <div class="beach-card">
+        <div class="beach-img b1">&#127754;</div>
+        <div class="beach-body">
+          <div class="beach-name">Panambur Beach</div>
+          <p class="beach-desc">Mangalore's most popular beach, famous for its golden sands, water sports, and stunning sunsets. Perfect for families.</p>
+          <div class="beach-tags">
+            <span class="btag">Water Sports</span>
+            <span class="btag">Sunset</span>
+            <span class="btag">Family Friendly</span>
+          </div>
+        </div>
+      </div>
+      <div class="beach-card">
+        <div class="beach-img b2">&#9875;</div>
+        <div class="beach-body">
+          <div class="beach-name">Tannirbhavi Beach</div>
+          <p class="beach-desc">A serene, less crowded beach accessible by boat. The ferry ride itself is an experience worth having.</p>
+          <div class="beach-tags">
+            <span class="btag">Ferry Ride</span>
+            <span class="btag">Peaceful</span>
+            <span class="btag">Photography</span>
+          </div>
+        </div>
+      </div>
+      <div class="beach-card">
+        <div class="beach-img b3">&#127796;</div>
+        <div class="beach-body">
+          <div class="beach-name">Someshwara Beach</div>
+          <p class="beach-desc">A hidden gem with rocky shores, coconut groves, and a beautiful ancient temple right on the seafront.</p>
+          <div class="beach-tags">
+            <span class="btag">Rocky Shore</span>
+            <span class="btag">Temple</span>
+            <span class="btag">Hidden Gem</span>
+          </div>
+        </div>
+      </div>
+      <div class="beach-card">
+        <div class="beach-img b4">&#127752;</div>
+        <div class="beach-body">
+          <div class="beach-name">Sasihithlu Beach</div>
+          <p class="beach-desc">Where the river meets the sea — a breathtaking confluence point that makes for incredible photographs.</p>
+          <div class="beach-tags">
+            <span class="btag">River Confluence</span>
+            <span class="btag">Scenic</span>
+            <span class="btag">Offbeat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="temples-bg">
+    <section id="temples">
+      <div class="section-header">
+        <div class="section-tag">&#127983; Temples &amp; Culture</div>
+        <h2>Ancient Shrines &amp; Sacred Spaces</h2>
+        <p>Mangalore is home to some of India's most revered temples, each with a unique story.</p>
+      </div>
+      <div class="temples-grid">
+        <div class="temple-card">
+          <div class="temple-icon">&#127983;</div>
+          <div class="temple-name">Kudroli Gokarnath Temple</div>
+          <p class="temple-desc">A stunning temple famous for its Navratri celebrations and intricate Dravidian architecture.</p>
+          <div class="temple-dist">&#128205; City Centre</div>
+        </div>
+        <div class="temple-card">
+          <div class="temple-icon">&#10024;</div>
+          <div class="temple-name">Mangaladevi Temple</div>
+          <p class="temple-desc">The temple that gave Mangalore its name — one of the oldest and most sacred in the city.</p>
+          <div class="temple-dist">&#128205; Bolar, Mangalore</div>
+        </div>
+        <div class="temple-card">
+          <div class="temple-icon">&#127981;</div>
+          <div class="temple-name">Kadri Manjunath Temple</div>
+          <p class="temple-desc">A 1000-year-old temple with beautiful bronze statues and a peaceful tank surrounded by hills.</p>
+          <div class="temple-dist">&#128205; Kadri Hills</div>
+        </div>
+        <div class="temple-card">
+          <div class="temple-icon">&#127968;</div>
+          <div class="temple-name">St. Aloysius Chapel</div>
+          <p class="temple-desc">A stunning 19th-century chapel with breathtaking ceiling frescoes painted by Italian Jesuit artists.</p>
+          <div class="temple-dist">&#128205; Lighthouse Hill</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="food">
+    <div class="section-header">
+      <div class="section-tag">&#127860; Food &amp; Flavours</div>
+      <h2>You Cannot Leave Without Eating This</h2>
+      <p>Mangalorean cuisine is legendary. Here are the dishes you absolutely must try.</p>
+    </div>
+    <div class="food-grid">
+      <div class="food-card">
+        <div class="food-emoji">&#127857;</div>
+        <div class="food-name">Neer Dosa</div>
+        <p class="food-desc">Silky thin rice crepes served with coconut chutney or fish curry. A Mangalorean breakfast staple.</p>
+        <span class="food-must">&#11088; Must Try</span>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">&#127831;</div>
+        <div class="food-name">Kori Rotti</div>
+        <p class="food-desc">Crispy wafer-thin rice crackers soaked in spicy Mangalorean chicken curry. Pure comfort food.</p>
+        <span class="food-must">&#11088; Must Try</span>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">&#127843;</div>
+        <div class="food-name">Fish Curry &amp; Rice</div>
+        <p class="food-desc">Fresh coastal fish in a tangy coconut-based curry served with red boiled rice. The soul of Mangalore.</p>
+        <span class="food-must">&#11088; Must Try</span>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">&#127848;</div>
+        <div class="food-name">Gadbad Ice Cream</div>
+        <p class="food-desc">A Mangalore original — layers of fruit, jelly, ice cream and nuts in a tall glass. Invented right here!</p>
+        <span class="food-must">&#11088; Mangalore Original</span>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">&#127834;</div>
+        <div class="food-name">Mangalore Buns</div>
+        <p class="food-desc">Sweet fluffy banana puris served with coconut chutney — a unique breakfast you won't find anywhere else.</p>
+        <span class="food-must">&#11088; Local Favourite</span>
+      </div>
+      <div class="food-card">
+        <div class="food-emoji">&#127859;</div>
+        <div class="food-name">Kane Fish Fry</div>
+        <p class="food-desc">Lady fish marinated in Mangalorean spices and shallow fried to perfection. A seafood lover's dream.</p>
+        <span class="food-must">&#11088; Seafood Special</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="tips-section" id="tips">
+    <div class="section-header">
+      <div class="section-tag">&#128161; Traveller Tips</div>
+      <h2>Before You Visit</h2>
+      <p>A local's guide to making the most of your trip to Mangalore.</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">&#9728;&#65039;</div>
+        <div class="tip-title">Best Time to Visit</div>
+        <p class="tip-text">October to February is ideal — cool weather, calm seas, and clear skies. Avoid monsoon season for beaches.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">&#128652;</div>
+        <div class="tip-title">Getting Around</div>
+        <p class="tip-text">Auto-rickshaws are the easiest way to get around. Ola and Uber also work well within the city.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">&#127969;</div>
+        <div class="tip-title">Where to Stay</div>
+        <p class="tip-text">Stay near Hampankatta or Kadri for easy access to most temples, beaches, and food spots.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">&#128483;&#65039;</div>
+        <div class="tip-title">Local Language</div>
+        <p class="tip-text">Tulu and Kannada are spoken locally. Most people understand Hindi and English too — don't worry!</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Visit<span>Mangalore</span></div>
+    <p style="margin-top:8px;">Made with <span class="heart">&#10084;</span> by a proud Mangalorean &mdash; built using HTML &amp; CSS</p>
+    <p style="margin-top:6px; font-size:12px;">&#127754; The Queen of the Arabian Sea</p>
+  </footer>
+
+</body>
+</html>
