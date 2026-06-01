@@ -424,6 +424,54 @@
     .map-btn:hover { background: var(--ocean); color: var(--white); }
 
     .tip-title { font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+
+    /* How to Reach */
+    .reach-bg { background: var(--sand-dark); }
+
+    .reach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .reach-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .reach-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(10,123,138,0.12); }
+
+    .reach-mode {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ocean);
+      margin-bottom: 6px;
+    }
+
+    .reach-badge {
+      display: inline-block;
+      font-size: 11px;
+      background: var(--teal-light);
+      color: var(--ocean);
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .reach-item {
+      border-top: 1px solid var(--border);
+      padding: 10px 0;
+    }
+
+    .reach-item:first-of-type { border-top: none; padding-top: 0; }
+
+    .reach-title { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+    .reach-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+    .reach-dist { font-size: 11px; color: var(--gold); font-weight: 500; margin-top: 4px; }
     .tip-text { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.6; }
 
     footer {
@@ -457,6 +505,7 @@
         <li><a href="#places">Places</a></li>
         <li><a href="#food">Food</a></li>
         <li><a href="#culture">Culture</a></li>
+        <li><a href="#reach">Reach</a></li>
         <li><a href="#tips">Tips</a></li>
       </ul>
     </div>
@@ -686,6 +735,112 @@
             <div class="culture-name">Mangalore Dasara</div>
             <p class="culture-desc">The city comes alive during Navratri with the spectacular Kudroli temple celebrations — grand processions, dazzling lights, Pilivesha dancers and thousands of devoted visitors.</p>
             <span class="culture-tag">Grand Festival</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- HOW TO REACH -->
+  <div class="reach-bg">
+    <section id="reach">
+      <div class="section-header">
+        <div class="section-tag">How to Reach</div>
+        <h2>Getting to Mangalore</h2>
+        <p>Mangalore is well connected by air, rail and road — here's how to get here from anywhere in India.</p>
+      </div>
+      <div class="reach-grid">
+
+        <div class="reach-card">
+          <div class="reach-mode">By Air</div>
+          <span class="reach-badge">Mangalore International Airport</span>
+          <div class="reach-item">
+            <div class="reach-title">Mangalore International Airport (IATA: IXE)</div>
+            <p class="reach-desc">Also known as Bajpe Airport, located at Bajpe, 15 km from the city centre. One of the busiest airports on the west coast of India.</p>
+            <div class="reach-dist">15 km from city — 30 mins by taxi</div>
+          </div>
+          <div class="reach-item">
+            <div class="reach-title">Domestic Flights From</div>
+            <p class="reach-desc">Bangalore, Mumbai, Chennai, Hyderabad, Delhi, Goa, Kochi and other major Indian cities with daily connections.</p>
+          </div>
+          <div class="reach-item">
+            <div class="reach-title">International Flights</div>
+            <p class="reach-desc">Direct international flights to Dubai, Abu Dhabi, Sharjah, Muscat, Doha, Kuwait, Bahrain — very popular with the Gulf NRI community.</p>
+          </div>
+          <div class="reach-item">
+            <div class="reach-title">Airlines Operating</div>
+            <p class="reach-desc">IndiGo, Air India, SpiceJet, GoAir, Air Arabia, Emirates, Oman Air, Flydubai and more.</p>
+          </div>
+        </div>
+
+        <div class="reach-card">
+          <div class="reach-mode">By Train</div>
+          <span class="reach-badge">2 Major Railway Stations</span>
+          <div class="reach-item">
+            <div class="reach-title">Mangalore Central (MAQ)</div>
+            <p class="reach-desc">The main railway station located in the heart of the city. Well connected to Mumbai, Bangalore, Chennai, Delhi and all major cities via the Konkan Railway route.</p>
+            <div class="reach-dist">City centre — most convenient station</div>
+          </div>
+          <div class="reach-item">
+            <div class="reach-title">Mangalore Junction (MAJN)</div>
+            <p class="reach-desc">Connects to Bangalore, Mysore, Coimbatore, Chennai and Kerala. Ideal for passengers coming from south India.</p>
+            <div class="reach-dist">5 km from city centre</div>
+          </div>
+          <div class="reach-item">
+            <div class="reach-title">Popular Trains</div>
+            <p class="reach-desc">Matsyagandha Express (Mumbai), Netravati Express (Mumbai–Thiruvananthapuram), Malabar Express, Karnataka Express, Rajya Rani Express (Bangalore) and many more.</p>
+          </div>
+          <div class="reach-item">
+            <div class="reach-title">Book Tickets</div>
+            <p class="reach-desc">Book on IRCTC (irctc.co.in) or at the station. Overnight sleeper trains are the most popular and affordable option.</p>
+          </div>
+        </div>
+
+        <div class="reach-card">
+          <div class="reach-mode">By Bus</div>
+          <span class="reach-badge">KSRTC &amp; Private Operators</span>
+          <div class="reach-item">
+            <div class="reach-title">Government Buses — KSRTC</div>
+            <p class="reach-desc">Karnataka SRTC operates regular and Airavat Volvo AC buses from Bangalore, Mysore, Hubli, Hassan and other Karnataka cities. Affordable and reliable.</p>
+          </div>
+          <div class="reach-item">
+            <div class="reach-title">Private Bus Operators</div>
+            <p class="reach-desc">VRL Travels, SRS Travels, Paulo Travels, Orange Tours, Chartered Bus and many others operate sleeper and semi-sleeper AC buses daily.</p>
+          </div>
+          <div class="reach-item">
+            <div class="reach-title">From Bangalore</div>
+            <p class="reach-desc">Most popular route — dozens of overnight buses daily. Sleeper Volvo buses are very comfortable.</p>
+            <div class="reach-dist">~360 km — 7 to 8 hours</div>
+          </div>
+          <div class="reach-item">
+            <div class="reach-title">From Goa / Mumbai / Kerala</div>
+            <p class="reach-desc">Frequent buses via the scenic NH66 coastal highway connecting Mangalore to Goa (160 km), Mumbai and Calicut (160 km).</p>
+          </div>
+        </div>
+
+        <div class="reach-card">
+          <div class="reach-mode">By Road</div>
+          <span class="reach-badge">NH66 &amp; NH75</span>
+          <div class="reach-item">
+            <div class="reach-title">From Bangalore</div>
+            <p class="reach-desc">Via NH75 through the scenic Western Ghats — drive through Sakleshpur and Hassan with stunning forest views.</p>
+            <div class="reach-dist">~360 km — 6 to 7 hours</div>
+          </div>
+          <div class="reach-item">
+            <div class="reach-title">From Goa</div>
+            <p class="reach-desc">Via NH66 — one of India's most scenic coastal drives along the Arabian Sea. Breathtaking views throughout.</p>
+            <div class="reach-dist">~160 km — 3 to 4 hours</div>
+          </div>
+          <div class="reach-item">
+            <div class="reach-title">From Kerala (Calicut)</div>
+            <p class="reach-desc">Via NH66 along the Malabar coast — a smooth and scenic drive through coastal Karnataka and Kerala.</p>
+            <div class="reach-dist">~160 km — 3 hours</div>
+          </div>
+          <div class="reach-item">
+            <div class="reach-title">From Mumbai</div>
+            <p class="reach-desc">Via NH66 through the entire Konkan coastline — a spectacular road trip passing Goa, beaches and coastal towns.</p>
+            <div class="reach-dist">~1000 km — 16 to 18 hours</div>
           </div>
         </div>
 
